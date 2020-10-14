@@ -1,0 +1,131 @@
+////////////////////////////////////////////////////////
+Escenas y nuevo componente
+///////////////////////////////////////////////////////
+
+
+1-  Dentro de la carpeta "src" crear una nueva carpeta llamada "scenes".
+
+Nota: scenes contendrá todas las páginas internas del sitio web.
+
+2-  Crear una nueva carpeta dentro de "scenes" con el nombre de la página que corresponda y la primera letra del nombre en mayúscula (Home en nuestro caso).
+
+3-  Dentro de la carpeta "Home" crear un archivo llamado "index.jsx" y agregar la siguiente línea
+  
+    import React from 'react'
+
+4-  En este index.jsx vamos a crear nuestro componente Home, para eso agregaremos:
+
+
+     export const Home = () =>{
+        return(
+            <h1>Sintaxis</h1>
+        )
+      }
+      
+      
+      Nota: Si existieran funcionalidades se agregarían entre el arrow function y el return. 
+      
+5- En nuestro archivo App.js agregar nuestro componente dentro de return, en nuestro caso:
+
+
+   <Home/>
+   
+   
+   Nota: recordar siempre que el nombre de la carpeta de nuestro componente y el export del mismo se debe escribír con la primera letra en mayúscula.
+   
+6- Ahora en este mismo archivo agregamos el import de nuestro componente:
+
+
+  import { Home } from './scenes/Home'
+  
+  
+  
+  Genial!! Con esto ya podrás ver tu componente en el browser!!!
+  
+  
+  
+  
+  
+  /////////////////////////////////////////////////////////
+  Agregar estilos a nuestro componente:
+  ////////////////////////////////////////////////////////
+  
+  
+  1-  En la cónsola > ubicación del proyecto, ejecutar el siguiente comando:
+  
+  npm install --save styled-components
+  
+  2-  Dentro de la carpeta Home agregar un nuevo archivo llamado styles.jsx
+  
+  3-  En el archivo Styles.jsx agregamos el import de styles:
+  
+  
+    import styled from 'styled-components'
+    
+    
+ 4- Luego agregamos la siguiente línea, la clase Wrapper la puedes cambiar por la que sea conveniente:
+ 
+ 
+    export const Wrapper = styled.div``
+ 
+ 
+     Nota: esta línea crea un div con una clase que será representada con la palabra Wrapper para nuestro uso.
+     
+5-Para agregar estilos sòlo hay que meterlos dentro de los backticks.
+  Ejm:
+  
+  export const Wrapper = styled.div`
+      background: green;
+  `
+  
+  
+-6 Importar los estilos en el archivo index.jsx con la siguiente línea (Recordar que el nombre del componente va en mayúscula).
+
+
+  import { Wrapper } from "./styled";
+
+
+-7 Ahora podemos agregarlo a nuestro componente y se vería de esta manera:
+
+
+    export const Home = () =>{
+      return(
+          <Wrapper>Este texto tiene un fondo verde porque Wrapper tiene una propiedad background green</Wrapper>
+      )
+    }
+    
+Listo! ya se pueden visualizar los estilos en el navegador!!
+
+
+
+
+
+
+//////////////////////////////////////////////
+Info extra acerca de estilos:
+/////////////////////////////////////////////
+
+Si dentro de un componente hubiera algún otro elemento, ejemplo:
+
+export const Home = () =>{
+    return(
+        <Wrapper>
+            <h1>Hola desde adentro del wrapper</h1>
+        </Wrapper>
+    )
+}
+
+y quisiera agregar estilos al <h1>
+
+Entonces lo anidaría dentro de Wrapper en el archivo styled.jsx (similar a lo que haría en Sass)
+
+  export const Wrapper = styled.div`
+    background: green;
+    h1{
+        color: #fff;
+    }
+`
+
+Genial!!!
+      
+   
