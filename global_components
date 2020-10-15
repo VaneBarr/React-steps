@@ -1,0 +1,56 @@
+/////////////////////////////////////////////////////////
+Para crear componentes globales como el header:
+////////////////////////////////////////////////////////
+
+1-  En la carpeta "src" crear una nueva carpeta llamada "components" 
+
+2-  Dentro de "components" crear una carpeta con el nombre del componente, en este caso será "Header".
+
+3-  Dentro de "Header" crear el archivo index.jsx y agregar el import y export correspondiente, se verá de la siguiente manera:
+
+
+import React from 'react'
+
+export const Header = () => {
+    return(
+        <header>
+            Este es el header
+        </header>
+    )
+}
+
+
+4- Ir a la ubicación donde se quiere importar, en mi caso será en el archivo index.jsx del componente Home y agregar el import y el Header.
+Se debería ver de la siguiente manera:
+
+
+
+import React from 'react'
+import { Header } from '../../components/Header'
+
+export const Home = () =>{
+    return(
+            <Header />
+    )
+}
+  
+Ya puedes visualizarlo en el navegador!!!
+
+
+//////////////////////////////////////////
+Componente con varios hijos
+/////////////////////////////////////////
+
+Si el componente tuviera varios hijos, como es común, entonces agregaríamos <></> y adentro el contenido que corresponda. 
+Ejemplo de nuestra home:
+
+return(
+  <>
+    <Header />
+    <Wrapper>
+       <div className='test'>
+            Esto es un div de toda la vida
+       </div>
+    </Wrapper>
+  </>
+)
