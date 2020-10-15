@@ -1,0 +1,21 @@
+////////////////////////////////////
+Importar imágenes
+///////////////////////////////////
+
+
+1-  En la carpeta "src" crear las carpetas resources > images
+
+2-  En el archivo donde queremos usar la imagen agregaremos el import con un nombre representativo
+
+    Ejm:
+    
+    import Logo from '../../resources/images/logo.png'
+    
+3-  Luego podemos usar nuestra imagen de la siguiente manera:
+
+    <img src={ Logo }/>
+    
+    
+    
+    
+
